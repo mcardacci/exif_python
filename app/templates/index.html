@@ -1,0 +1,22 @@
+<html>
+	<body>
+		{% extends "base.html" %}
+		{% block content %}
+		    <p>
+		    	Hi, {{ user.nickname }}!
+		    </p>
+		    <div id="drag_and_drop_box">
+
+		    </div>
+		    <!-- {% for post in posts %}
+		    <div>
+		    	<h1>
+		    		{{ post.author.nickname }} says: 
+		    		<b>{{ post.body }}</b>
+		    	</h1>
+		    </div>
+		    {% endfor %} -->
+		{% endblock %}
+	</body>
+</html>
+
