@@ -2,18 +2,27 @@
 
 <body>
   {% extends "base.html" %} {% block content %}
-  <p>
-    Hi, {{ user.nickname }}!
-  </p>
-  <div id="drag_and_drop_box" class="center-block">
-    <div id="wrapper">
-      <div id="upload_image" class="center-block-content" src="/static/img/upload_icon.png"></div>
-      <h3 class="center-block-content">Drag and Drop From Your Device!</h3>
-    </div>
-  </div>
-
-  <form action="/profile" method="post"class="dropzone"></form>
-  <!-- {% for post in posts %}
+  <!--
+<p>
+	Hi, {{ user.nickname }}!
+</p>
+-->
+	<div id="logo"></div>
+	<div id="drag_and_drop_box" class="center-block">
+		<div id="upload_image" src="/static/img/upload_icon.png"></div>
+		<p class="center-block-content">Drag and Drop From Your Device!</p>
+	</div>
+	<div id="social-media">
+		<p id="socialTxt">Or upload from your social media</p>
+		<ul id="icons">
+			<li id="fb"></li>
+			<li id="twt"></li>
+			<li id="insta"></li>
+			<li id="google"></li>
+		</ul>
+	</div>
+    <form action="/profile" method="post"class="dropzone"></form>
+	<!-- {% for post in posts %}
 		    <div>
 		    	<h1>
 		    		{{ post.author.nickname }} says: 
@@ -21,7 +30,7 @@
 		    	</h1>
 		    </div>
 		    {% endfor %} -->
-  {% endblock %}
+	{% endblock %}
 </body>
 
 </html>
