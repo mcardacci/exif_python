@@ -11,3 +11,6 @@
 
 # Why Exify?
 * The title Exify is a is a play on the file format found on modern digital photos called.
+
+# Final Design and Implementation
+* https://projects.invisionapp.com/share/BT75V166C#/screens/155386620
