@@ -1,1 +1,0 @@
-var Dropzone = require("dropzone");
