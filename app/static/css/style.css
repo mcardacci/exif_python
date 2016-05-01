@@ -2,15 +2,18 @@ body {
 	background-color:#211F1F;
 }
 
-	/*font-family: 'Open Sans';
-	font-size: 24px;*/
-
 #drag_and_drop_box {
 	border-radius:10px;
 	background-color:white;
-	width: 960px;
-	height: 100px;
+	width: 700px;
+	height: 450px;
 	position: relative;
 	margin:0 auto;
 	line-height: 1.4em;
+}
+
+#upload_image {
+	/*display: block;*/
+	/*margin: auto;*/
+	/*top:500px;*/
 }
