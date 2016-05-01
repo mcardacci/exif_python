@@ -1,8 +1,9 @@
 body {
-	background-color:#211F1F;
+  /*	background-color:#211F1F;*/
 }
 
 #drag_and_drop_box {
+  /*
 	border-radius:10px;
 	background-color:white;
 	width: 700px;
@@ -10,10 +11,49 @@ body {
 	position: relative;
 	margin:0 auto;
 	line-height: 1.4em;
+*/
 }
 
 #upload_image {
-	/*display: block;*/
-	/*margin: auto;*/
-	/*top:500px;*/
+  /*display: block;*/
+  /*margin: auto;*/
+  /*top:500px;*/
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  background: #211F1F;
+}
+
+#drag_and_drop_box {
+  width: 100vmin;
+  height: 70vmin;
+  margin: 0 auto;
+  background: #fff;
+  text-align: center;
+}
+
+#wrapper {
+  border: 2px solid red;
+  height: 100%;
+}
+
+.center-block-content {
+  /*  line-height: 70vmin;*/
+}
+
+#upload_image {
+  width: 30vmin;
+  height: 30vmin;
+  /*  border: 2px solid red;*/
+  margin: 0 auto;
+  background: url(../img/upload_icon.png);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
 }
