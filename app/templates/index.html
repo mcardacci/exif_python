@@ -1,27 +1,27 @@
- html>
+<html>
 
 <body>
   {% extends "base.html" %} {% block content %}
   <!--
 <p>
-	Hi, {{ user.nickname }}!
+  Hi, {{ user.nickname }}!
 </p>
 -->
-	<div id="logo"></div>
-	<div id="drag_and_drop_box" class="center-block">
-		<div id="upload_image" src="/static/img/upload_icon.png"></div>
-		<p class="center-block-content">Drag and Drop From Your Device!</p>
-	</div>
-	<div id="social-media">
-		<p id="socialTxt">Or upload from your social media</p>
-		<ul id="icons">
-			<li id="fb"></li>
-			<li id="twt"></li>
-			<li id="insta"></li>
-			<li id="google"></li>
-		</ul>
-	</div>
-    <form action="/profile" method="post"class="dropzone"></form>
+  <div id="logo"></div>
+  <div id="drag_and_drop_box" class="center-block">
+  <!-- <form action="/profile" method="post"class="dropzone"></form> -->
+    <div name="upload_image" id="upload_image" class="droptarget" ondrop="drop(event)" ondragover="allowDrop(event)" src="/static/img/upload_icon.png"></div>
+    <p class="center-block-content">Drag and Drop From Your Device!</p>
+  </div>
+  <div id="social-media">
+    <p id="socialTxt">Or upload from your social media</p>
+    <ul id="icons">
+      <li id="fb"></li>
+      <li id="twt"></li>
+      <li id="insta"></li>
+      <li id="google"></li>
+    </ul>
+  </div>
 	<!-- {% for post in posts %}
 		    <div>
 		    	<h1>

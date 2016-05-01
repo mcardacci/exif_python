@@ -26,8 +26,10 @@ def index():
 @app.route('/profile', methods=['POST', 'GET'])
 def get_photo_data():
     if request.method=='POST':
-        form=request.form
-        return render_template('profile.html', form=form)
+        jsonData=request.form
+        print jsonData
+        # form=request.form
+        return render_template('profile.html', jsonData=jsonData)
 
 # @app.route('/login', methods=['GET', 'POST'])
 # def login():
