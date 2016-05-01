@@ -1,5 +1,8 @@
-from flask import render_template
+from flask import render_template, request
 from app import app
+import exifread
+import newspaper
+
 
 @app.route('/')
 @app.route('/index')
@@ -19,6 +22,12 @@ def index():
                            title='Home',
                            user=user,
                            posts=posts)
+
+@app.route('/profile', methods=['POST', 'GET'])
+def get_photo_data():
+    if request.method=='POST':
+        form=request.form
+        return render_template('profile.html', form=form)
 
 # @app.route('/login', methods=['GET', 'POST'])
 # def login():

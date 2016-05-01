@@ -1,4 +1,4 @@
-<html>
+ html>
 
 <body>
   {% extends "base.html" %} {% block content %}
@@ -10,8 +10,9 @@
       <div id="upload_image" class="center-block-content" src="/static/img/upload_icon.png"></div>
       <h3 class="center-block-content">Drag and Drop From Your Device!</h3>
     </div>
-
   </div>
+
+  <form action="/profile" method="post"class="dropzone"></form>
   <!-- {% for post in posts %}
 		    <div>
 		    	<h1>
