@@ -1,6 +1,4 @@
 document.getElementById("upload_image").onchange = function(e) {
-    var longitude, dateStamp, latitude, latRef, longRef;
-
     EXIF.getData(e.target.files[0], function() {
         var method = 'post';
         var route = '/profile';
@@ -21,12 +19,12 @@ document.getElementById("upload_image").onchange = function(e) {
                 "latRef"   : latRef,
                 "longRef"  : longRef
                 }),
-            }).done(function(response) {
-    	        console.log(response);
-            }).fail(function(response) {
-                console.log("you did a bad thing");    
-            })
-        });
+        }).done(function(response) {
+            console.log(response);
+        }).fail(function(response) {
+            console.log("you did a bad thing");    
+        })
+    });
 }
 
 
