@@ -20,8 +20,8 @@ africa=newspaper.build('http://allafrica.com/')
 rgazette=newspaper.build('http://www.royalgazette.com/')
 bernews=newspaper.build('http://bernews.com/')
 
-# for article in rgazette.articles:
-# 	articles.append(article)
+for article in rgazette.articles:
+ 	articles.append(article)
 
 for article in bernews.articles:
 	articles.append(article)

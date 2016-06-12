@@ -1,23 +1,34 @@
-function allowDrop(event) {
-    event.preventDefault();
+document.getElementById("upload_image").onchange = function(e) {
+    var longitude, dateStamp, latitude, latRef, longRef;
+
+    EXIF.getData(e.target.files[0], function() {
+        var method = 'post';
+        var route = '/profile';
+        var longitude = EXIF.getTag(this, "GPSLongitude"),
+        dateStamp = EXIF.getTag(this, "GPSDateStamp"),
+        latitude = EXIF.getTag(this, "GPSLatitude"),
+        latRef = EXIF.getTag(this, "GPSLatitudeRef"),
+        longRef = EXIF.getTag(this, "GPSLongitudeRef");
+        
+        $.ajax({
+            'url' : route,
+            'method': 'POST',
+            'datatype' : 'json',
+            'data': JSON.stringify({
+                "dateStamp": dateStamp,
+                "longitude": longitude,
+                "latitude" : latitude,
+                "latRef"   : latRef,
+                "longRef"  : longRef
+                }),
+            }).done(function(response) {
+    	        console.log(response);
+            }).fail(function(response) {
+                console.log("you did a bad thing");    
+            })
+        });
 }
 
-function drop(event) {
-    event.preventDefault();
-    var $target = $(event.target);
-    // console.log($target)
-    var method = 'post';
-    var route = '/profile';
-    $.ajax({
-    	'url' : route,
-    	'method': 'POST',
-    	'datatype' : 'json',
-    	'data': JSON.stringify({picture: $target}),
-    }).done(function(response) {
-    	console.log(response);
-    })
-    // console.log("It's been dropped!")
-    // var data = event.dataTransfer.getData("Text");
-    // event.target.appendChild(document.getElementById(data));
-    // document.getElementById("demo").innerHTML = "The p element was dropped";
-}
+
+
+

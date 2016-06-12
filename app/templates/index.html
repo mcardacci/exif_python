@@ -1,16 +1,9 @@
 <html>
-
 <body>
   {% extends "base.html" %} {% block content %}
-  <!--
-<p>
-  Hi, {{ user.nickname }}!
-</p>
--->
   <div id="logo"></div>
   <div id="drag_and_drop_box" class="center-block">
-  <!-- <form action="/profile" method="post"class="dropzone"></form> -->
-    <div name="upload_image" id="upload_image" class="droptarget" ondrop="drop(event)" ondragover="allowDrop(event)" src="/static/img/upload_icon.png"></div>
+    <input name="upload_image" id="upload_image" type="file"/>
     <p class="center-block-content">Drag and Drop From Your Device!</p>
   </div>
   <div id="social-media">
@@ -22,15 +15,20 @@
       <li id="google"></li>
     </ul>
   </div>
-	<!-- {% for post in posts %}
-		    <div>
-		    	<h1>
-		    		{{ post.author.nickname }} says: 
-		    		<b>{{ post.body }}</b>
-		    	</h1>
-		    </div>
-		    {% endfor %} -->
-	{% endblock %}
+  {% endblock %}
 </body>
 
 </html>
+  <!-- {% for post in posts %}
+        <div>
+          <h1>
+            {{ post.author.nickname }} says: 
+            <b>{{ post.body }}</b>
+          </h1>
+        </div>
+        {% endfor %} -->
+<!--
+  <p>
+    Hi, {{ user.nickname }}!
+  </p>
+-->
