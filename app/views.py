@@ -7,29 +7,14 @@ import newspaper
 @app.route('/')
 @app.route('/index')
 def index():
-    user = {'nickname': 'Marco'}  # fake user
-    posts = [  # fake array of posts
-        { 
-            'author': {'nickname': 'Eva'}, 
-            'body': 'Beautiful day in Portland!' 
-        },
-        { 
-            'author': {'nickname': 'Susan'}, 
-            'body': 'The Avengers movie was so cool!' 
-        }
-    ]
-    return render_template("index.html",
+   return render_template("index.html",
                            title='Home',
-                           user=user,
-                           posts=posts)
+                           )
 
-@app.route('/profile', methods=['POST', 'GET'])
+@app.route('/profile', methods=['POST'])
 def get_photo_data():
-    if request.method=='POST':
-        jsonData=request.form
-        print jsonData
-        # form=request.form
-        return render_template('profile.html', jsonData=jsonData)
+    print request.form
+    return render_template('profile.html')
 
 # @app.route('/login', methods=['GET', 'POST'])
 # def login():
