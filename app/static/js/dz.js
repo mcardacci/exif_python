@@ -12,13 +12,13 @@ document.getElementById("upload_image").onchange = function(e) {
             'url' : route,
             'method': 'POST',
             'datatype' : 'json',
-            'data': JSON.stringify({
+            'data':{
                 "dateStamp": dateStamp,
-                "longitude": longitude,
-                "latitude" : latitude,
+                "longitude": String(longitude),
+                "latitude" : String(latitude),
                 "latRef"   : latRef,
                 "longRef"  : longRef
-                }),
+                },
         }).done(function(response) {
             console.log(response);
         }).fail(function(response) {
