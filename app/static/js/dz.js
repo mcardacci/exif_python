@@ -14,8 +14,8 @@ document.getElementById("upload_image").onchange = function(e) {
             'datatype' : 'json',
             'data':{
                 "dateStamp": dateStamp,
-                "longitude": longitude,
-                "latitude" : latitude,
+                "longitude": String(longitude),
+                "latitude" : String(latitude),
                 "latRef"   : latRef,
                 "longRef"  : longRef
                 },
