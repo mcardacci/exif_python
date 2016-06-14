@@ -13,7 +13,8 @@ def index():
 
 @app.route('/profile', methods=['POST'])
 def get_photo_data():
-    print request.form
+    exif_data= request.form.get("dateStamp")
+    print "this is the DATESTAMP: " +exif_data
     return render_template('profile.html')
 
 # @app.route('/login', methods=['GET', 'POST'])
