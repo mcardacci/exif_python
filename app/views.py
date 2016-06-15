@@ -14,16 +14,12 @@ def index():
 @app.route('/profile', methods=['POST'])
 def get_photo_data():
     dateStamp=request.form.get("dateStamp")
-    longitude=request.form.get("longitude")
-    latitude=request.form.get("latitude")
+    lon_list=request.form.get("longitude").split(',')
+    lat_list=request.form.get("latitude").split(',')
+    longitude=[float(i) for i in lon_list]
+    latitude=[float(i) for i in lat_list]
     latRef=request.form.get("latRef")
-    longRef=request.form.get("longRef")
-    
-    print dateStamp
-    print longitude.split(',')
-    print latitude.split(',')
-    print latRef 
-    print longRef
+    longRef=request.form.get("longRef")  
 
     return render_template('profile.html', 
     dateStamp=dateStamp, 
@@ -32,7 +28,7 @@ def get_photo_data():
     latRef=latRef,
     longRef=longRef
     )
-
+    
 
 # @app.route('/login', methods=['GET', 'POST'])
 # def login():
