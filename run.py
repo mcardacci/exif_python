@@ -1,2 +1,2 @@
-from app import app
+from exif_python import app
 app.run(debug=True)

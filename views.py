@@ -1,5 +1,5 @@
 from flask import render_template, request
-from app import app
+from exify import app
 import exifread
 import newspaper
 import ast
