@@ -1,8 +1,10 @@
 from flask import render_template, request
 from exify import app
+from models import Picture, db
 import exifread
 import newspaper
 import ast
+
 
 @app.route('/')
 @app.route('/index')
@@ -11,8 +13,8 @@ def index():
                            title='Home',
                            )
 
-@app.route('/profile', methods=['POST'])
-def get_photo_data():
+@app.route('/store', methods=['POST'])
+def store_photo_data():
     dateStamp=request.form.get("dateStamp")
     lon_list=request.form.get("longitude").split(',')
     lat_list=request.form.get("latitude").split(',')
@@ -21,17 +23,28 @@ def get_photo_data():
     latRef=request.form.get("latRef")
     longRef=request.form.get("longRef")  
 
-    return render_template('profile.html', 
-    dateStamp=dateStamp, 
-    longitude=longitude,
-    latitude=latitude,
-    latRef=latRef,
-    longRef=longRef
-    )
-    
+    return redirect('/')
 
-# @app.route('/login', methods=['GET', 'POST'])
-# def login():
+    # return render_template('profile.html', 
+    # dateStamp=dateStamp, 
+    # longitude=longitude,
+    # latitude=latitude,
+    # latRef=latRef,
+    # longRef=longRef
+    # )
+    
+@app.route('/profile', methods=['GET'])
+def get_all_photos_from_user():
+    pics=Picture.query.all()
+    
+    for pic in pics:
+        print pic.title
+        print pic.longitude
+        print pic.latitude
+
+    return render_template('profile.html',pictures=pics)
+    
+# @app.route('/login', methods=['GET', 'POST']) # def login():
 	# form=LoginForm()
 	# if form.validate_on_submit():
 	# 	flash('Login')
