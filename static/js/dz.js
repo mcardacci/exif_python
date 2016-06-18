@@ -1,7 +1,7 @@
 document.getElementById("upload_image").onchange = function(e) {
     EXIF.getData(e.target.files[0], function() {
         var method = 'post';
-        var route = '/profile';
+        var route = '/store';
         var longitude = EXIF.getTag(this, "GPSLongitude"),
         dateStamp = EXIF.getTag(this, "GPSDateStamp"),
         latitude = EXIF.getTag(this, "GPSLatitude"),
