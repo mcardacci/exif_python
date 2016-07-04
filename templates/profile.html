@@ -2,9 +2,11 @@
 {% block content %}
 <h1>List of All Pictures</h1>
     {% for pic in pictures %}
-        <p>{{ pic.title }}</p>
-        <p>{{ pic.longitude}}</p>
-        <p>{{ pic.latitude}}</p>
+        <p>Title: {{ pic.title }}</p>
+        <p>Long Ref: {{ pic.longRef }}</p>
+        <p>Longitude: {{ pic.longitude}}</p>
+        <p>Lat Ref: {{ pic.latRef }}</p>
+        <p>Latitude: {{ pic.latitude}}</p>
         <p>{{ pic.dateStamp }}</p>
     {% endfor %}
 {% endblock %}

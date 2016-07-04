@@ -1,13 +1,5 @@
-# import exifread
+import urllib
 import newspaper
-
-# f=open('withgeolocation.JPG', 'rb')
-
-# tags=exifread.process_file(f)
-
-# for tag in tags.keys():
-#     if tag not in ('JPEGThumbnail', 'TIFFThumbnail', 'Filename', 'EXIF MakerNote'):
-#         print "Key: %s, value %s" % (tag, tags[tag])
 
 articles=[]
 cnn=newspaper.build('http://cnn.com')
@@ -32,41 +24,53 @@ count = 0
 '''
 for article in cnn.articles:
     articles.append(article)
-    count +=1
-    if count == 5: break
+    count += 1
+    if count == 1: 
+        count = 0 
+        break
 '''
-
+'''
 for article in mashable.articles:
     articles.append(article)
     count +=1 
     if count == 5: break
-
+'''
 
 for article in bbc.articles:
     articles.append(article)
     count += 1
-    if count == 6: break
+    if count == 50: 
+        count = 0 
+        break 
 
-
+'''
 for article in theguardian.articles:
     articles.append(article)
     count += 1
-    if count == 6: break
-
+    if count == 1: 
+        count = 0
+        break 
+'''
+'''
 for article in cbc.articles:
     articles.append(article)
     count += 1
     if count == 6: break
-
+'''
+'''
 for article in aljazeera.articles:
     articles.append(article)
     count += 1
-    if count == 6: break
-
+    if count == 1: 
+        count = 0 
+        break
+'''
 print articles
 
 for a in articles:
     a.download()
     a.parse()
-    print a.url
+    print "URL: " + str(a.url)
+    print "PUBLISH DATE: " + str(a.publish_date)
     print "this is an IMAGE URL: " + str(a.top_image)
+    print "\n"
