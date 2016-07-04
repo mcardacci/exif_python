@@ -1,4 +1,4 @@
-from flask import render_template, request
+from flask import render_template, request, redirect
 from exify import app
 from models import Picture, db
 import exifread
@@ -22,6 +22,11 @@ def store_photo_data():
     latitude=[float(i) for i in lat_list]
     latRef=request.form.get("latRef")
     longRef=request.form.get("longRef")  
+    
+    print latRef
+    print latitude
+    print longRef
+    print longitude
 
     return redirect('/')
 
@@ -37,11 +42,6 @@ def store_photo_data():
 def get_all_photos_from_user():
     pics=Picture.query.all()
     
-    for pic in pics:
-        print pic.title
-        print pic.longitude
-        print pic.latitude
-
     return render_template('profile.html',pictures=pics)
     
 # @app.route('/login', methods=['GET', 'POST']) # def login():
