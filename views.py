@@ -37,11 +37,6 @@ def store_photo_data():
 def get_all_photos_from_user():
     pics=Picture.query.all()
     
-    for pic in pics:
-        print pic.title
-        print pic.longitude
-        print pic.latitude
-
     return render_template('profile.html',pictures=pics)
     
 # @app.route('/login', methods=['GET', 'POST']) # def login():
