@@ -24,7 +24,11 @@ body {
 }
 
 .form-horizontal {
-	width: 100vmin;
+/*	width: 100vmin;*/
+}
+
+.signIn{
+	color: white;
 }
 
 #logo {
