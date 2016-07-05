@@ -23,19 +23,29 @@ body {
 	color: white;
 }
 
-.form-horizontal {
-/*	width: 100vmin;*/
-}
-
-.signIn{
+.signIn {
 	color: white;
 }
 
-#logo {
+.navbar-default {
+	background-color: transparent;
+	border-color: transparent;
+}
+
+.navbar-default .navbar-nav>li>a {
+	color: #fff;
+}
+
+.navbar-default .navbar-collapse,
+.navbar-default .navbar-form {
+	border-color: #333;
+}
+
+.logo {
 	background: url(../img/exify-logo.png);
 	background-position: center center;
 	background-repeat: no-repeat;
-	background-size: 80%;
+	background-size: 70%;
 	width: 30vmin;
 	height: 10vmin;
 	margin-top: 1vmin;
@@ -140,4 +150,112 @@ body {
 	background-position: center;
 	background-repeat: no-repeat;
 	margin-left: 5%;
+}
+
+
+/*********************************************************
+	Profile styles
+*******************************************************/
+
+.text-center {
+	text-align: center;
+}
+
+.user__input,
+.top__stories,
+.time__line {
+	position: absolute;
+	color: white;
+}
+
+.user__input {
+	min-height: 60vmin;
+	height: 62vmin;
+	width: 70%;
+/*	border: 1px solid white;*/
+	left: 0;
+	top: 12%;
+	padding: 10px;
+	display: flex;
+	flex-direction: column;
+	align-content: center;
+}
+
+.top__stories {
+	min-height: 60vmin;
+	height: 60vmin;
+	width: 30%;
+/*	border: 1px solid red;*/
+	left: 70%;
+/*	top: 0;*/
+	overflow: scroll;
+	display: flex;
+	flex-direction: column;
+	align-content: center;
+/*	border: 2px solid #222;*/
+}
+
+.top-img {
+	height: 18vmin;
+	width: 18vmin;
+	background-image: url(../img/placeholder.png);
+	background-position: top left;
+	background-size: cover;
+	margin: 0 auto;
+	box-sizing: border-box;
+}
+
+.top-img + .top-img {
+	margin-top: 10px;
+}
+
+.time__line {
+	bottom: 0;
+	min-height: 26vmin;
+	height: auto;
+	width: 100%;
+	left: 0;
+	padding: 10px;
+/*	border: 1px solid green;*/
+	overflow-y: hidden;
+	overflow-x: scroll;
+}
+
+.current-img {
+	background-image: url(../img/placeholder.png);
+	background-position: top left;
+	background-size: cover;
+	width: 30vmin;
+	height: 30vmin;
+	align-self: center;
+}
+
+.img-text {
+	padding: 20px;
+}
+
+.time__line {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	align-content: center;
+/*	border: 2px solid #222;*/
+}
+
+.story-wrap-tl {
+	align-self: center;
+}
+
+.top-img-tl {
+	height: 20vmin;
+	width: 20vmin;
+	background-image: url(../img/placeholder.png);
+	background-position: top left;
+	background-size: cover;
+	margin: 0 auto;
+	box-sizing: border-box;
+}
+
+.story-wrap-tl + .story-wrap-tl {
+	margin-left: 200px;
 }
