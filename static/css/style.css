@@ -19,6 +19,14 @@ body {
 	justify-content: center;
 }
 
+.control-label {
+	color: white;
+}
+
+.form-horizontal {
+	width: 100vmin;
+}
+
 #logo {
 	background: url(../img/exify-logo.png);
 	background-position: center center;
