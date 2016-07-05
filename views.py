@@ -2,7 +2,7 @@ from flask import render_template, request, redirect
 from exify import app
 from models import Picture, db
 import exifread
-import newspaper
+#import newspaper
 import ast
 
 
@@ -45,9 +45,13 @@ def get_all_photos_from_user():
     return render_template('profile.html',pictures=pics)
     
 # @app.route('/login', methods=['GET', 'POST']) # def login():
-	# form=LoginForm()
-	# if form.validate_on_submit():
-	# 	flash('Login')
-	# return render_template('login.html',
-	# 	title='Sign In',
-	# 	form=form)
+#	 form=LoginForm()
+#	 if form.validate_on_submit():
+#	 	flash('Login')
+#	 return render_template('login.html',
+#	 	title='Sign In',
+#	 	form=form)
+
+@app.route('/login', methods=['GET'])
+def render_login_page():
+    return render_template('login.html')
