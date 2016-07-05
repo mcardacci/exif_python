@@ -1,4 +1,5 @@
-document.getElementById("upload_image").onchange = function(e) {
+document.getElementById("upload").onchange = function(e) {
+	e.preventDefault();
     EXIF.getData(e.target.files[0], function() {
         var method = 'post';
         var route = '/store';
@@ -20,13 +21,10 @@ document.getElementById("upload_image").onchange = function(e) {
                 "longRef"  : longRef
                 },
         }).done(function(response) {
-            console.log(response);
+            console.log('upload successful');
         }).fail(function(response) {
             console.log("you did a bad thing");    
         })
     });
 }
-
-
-
 
