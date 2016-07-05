@@ -12,32 +12,49 @@ body {
 	overflow: hidden;
 }
 
+.container {
+	display: flex;
+	flex-direction: column;
+	align-content: center;
+	justify-content: center;
+}
+
 #logo {
 	background: url(../img/exify-logo.png);
 	background-position: center center;
 	background-repeat: no-repeat;
-	background-size: contain;
-	width: 30vh;
-	height: 10vh;
-	margin-top: 2%;
-	margin-left: 2%;
-	/*	border: 2px solid red;*/
+	background-size: 80%;
+	width: 30vmin;
+	height: 10vmin;
+	margin-top: 1vmin;
+	margin-left: 1vmin;
+	padding: 1vmin;
+	align-self: flex-start;
 }
 
 #drag_and_drop_box {
 	border: 2px solid #fff;
-	margin: 5% auto;
-	height: 50%;
-	width: 45%;
+	margin: auto;
+	padding: 10px;
+	height: 55vmin;
+	width: 65vmin;
 	border-radius: 1vh;
 	background: #fff;
+	display: flex;
+	flex-direction: column;
+	align-content: center;
+	justify-content: center;
+}
+
+#upload {
+	position: absolute;
+	top: -1000px;
 }
 
 #upload_image {
-	/*	border: 2px solid blue;*/
 	height: 20vh;
 	width: 20vh;
-	margin: 10% auto 0;
+	margin: auto;
 	background: url(../img/upload_icon.png);
 	background-position: center center;
 	background-size: 100%;
@@ -45,27 +62,32 @@ body {
 
 #drag_and_drop_box p {
 	text-align: center;
-	margin-top: 8vmin;
 	font-size: 4.5vmin;
 }
 
 #social-media {
-	/*	border: 2px solid green;*/
-	height: 20%;
-	width: 45%;
-	margin: -2% auto;
-	text-align: center;
+	display: flex;
+	flex-direction: column;
+	align-content: center;
+	justify-content: center;
+	padding: 20px;
+	/*	border: 2px solid #fff;*/
 }
 
 #socialTxt {
 	font-size: 3vh;
 	color: #fff;
+	text-align: center;
 }
 
 #icons {
 	margin: 5% auto;
 	/*	border: 2px solid red;*/
 	height: 10vh;
+	display: flex;
+	flex-direction: row;
+	align-content: center;
+	justify-content: center;
 }
 
 #social-media ul li {
