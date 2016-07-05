@@ -55,3 +55,7 @@ def get_all_photos_from_user():
 @app.route('/login', methods=['GET'])
 def render_login_page():
     return render_template('login.html')
+
+@app.route('/welcome', methods=['GET'])
+def render_welcome_page():
+    return render_template('welcome.html')
