@@ -1,4 +1,3 @@
-# from app import app 
 from datetime import datetime
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
@@ -18,5 +17,13 @@ class Picture (db.Model):
     latitude = db.Column('latitude', JSON)   
     dateStamp = db.Column('dateStamp', db.Date, default=datetime.utcnow)
 
+class User(db.Model):
+    __tablename__="users"
+    
+    id = db.Column('id', db.Integer, primary_key=True)
+    username=db.Column('username', db.Unicode)
+    password=db.Column('password', db.Unicode)
 
-
+    def __init__(self, username, password):
+        self.username=username
+        self.password=password
